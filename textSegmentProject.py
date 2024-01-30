@@ -24,20 +24,23 @@ def textSegmentionWork(listOfSegments):
     textLength = ts.findTextLength(fileText)
     Text(textID, textLength, textBody, textTitle, listOfSegments)
 
+    green = '\033[32m'
+    bold = '\033[1m'
+    end = '\033[m'
 
     #print text info
-    print("Text info:")
-    print("Full text:")
+    print(green+bold+"Text info:"+end)
+    print(green+bold+"Full text:"+end)
     start = 0
     for line_number, sentence in enumerate(listOfSegments, start=start + 1):
         sentence = sentence.strip("\n")
         print(f"{line_number:2}: {sentence}")
     print()
-    print("Text id: ", textID)
-    print("Text length: ", textLength)
-    print("List of segments: ", listOfSegments)
-    print("Text title: ", textTitle)
-    print("Text body: ", textBody)
+    print(green+bold+"Text id: "+end, textID)
+    print(green+bold+"Text length: "+end, textLength)
+    print(green+bold+"List of segments: "+end, listOfSegments)
+    print(green+bold+"Text title: "+end, textTitle)
+    print(green+bold+"Text body: "+end, textBody)
 
     num = 0
     for segment in listOfSegments:
@@ -50,12 +53,12 @@ def textSegmentionWork(listOfSegments):
         Segment(segmentID, segmentText, segmentLength, positionStart, positionEnd)
 
         #print segment info
-        print("Segment", num, " info:")
-        print("Segment id: ", segmentID)
-        print("Segment length: ", segmentLength)
-        print("Segment text: ", segmentText)
-        print("Position start: ", positionStart)
-        print("Position end: ", positionEnd)
+        print(bold+"Segment", num, " info:"+end)
+        print(green+bold+"Segment id: "+end, segmentID)
+        print(green+bold+"Segment length: "+end, segmentLength)
+        print(green+bold+"Segment text: "+end, segmentText)
+        print(green+bold+"Position start: "+end, positionStart)
+        print(green+bold+"Position end: "+end, positionEnd)
         print()
 
 # full text
